@@ -1,0 +1,94 @@
+/* style file created by Edgar Gonzalez
+===========================================
+00: css variable
+01: color
+02: Typography
+
+===========================================
+*/
+
+/* 00 css variable */
+:root{
+    --body-color: hsla(180, 92%, 30%, 0.9);
+    --page-color: hsla(131, 53%, 85%, 0.8);
+    --sidebar-color: hsla(0, 82%, 38%, 0.9);
+    /** font color **/
+    --font-color: black;
+    /** h1 color -- practice **/
+    --h1-color: white;
+    /** layout variables **/
+    --page-top-position: 85%;
+    --page-width: 30%;
+    --bottom-bar-height: 15vh;
+    --bottom-bar-color: hsla(131, 53%, 85%, 0.8);
+}
+
+
+/* 01 Color */
+body{
+    background-color:var(--body-color);
+}
+#zen-intro{
+    background-color: var(--page-color);
+    color: var(--font-color);
+}
+#zen-supporting{
+    background-color: var(--page-color);
+}
+.sidebar{
+    background-color: var(--sidebar-color);
+}
+h1{
+    /* finish it */
+    background-color: var(--h1-color);
+}
+
+/*02 Layout*/
+div.explanation, div.requirements, div.benefits, div.participation{
+    position: fixed;
+    width: var(--page-width);
+    top: var(--page-top-position);
+    background-image: url(../img/newspaper3.jpg);
+}
+
+div.explanation{
+    left: 0%;
+}
+
+div.requirements{
+    left: 10%;
+}
+
+div.benefits{
+    left: 25%;
+}
+
+div.participation{
+    left: 40%;
+}
+
+aside.sidebar{
+    position: absolute;
+    top: 20%;
+    right: 0;
+    width: 10%;
+    height: 700px
+}
+
+section.intro{
+    position: fixed;
+    bottom: 5%;
+    left: 30%;
+    width: 30%;
+    height: 80%;
+    background-image:url(../img/newspaper1.jpg);
+}
+
+div.extra2{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--bottom-bar-height);
+    background-color: var(--bottom-bar-color);
+}
