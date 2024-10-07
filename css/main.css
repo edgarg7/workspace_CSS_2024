@@ -2,7 +2,9 @@
 ===========================================
 00: css variable
 01: color
-02: Typography
+02: Layout
+03: Typography
+
 
 ===========================================
 */
@@ -11,16 +13,16 @@
 :root{
     --body-color: hsla(180, 92%, 30%, 0.9);
     --page-color: hsla(131, 53%, 85%, 0.8);
-    --sidebar-color: hsla(0, 82%, 38%, 0.9);
+    --sidebar-color: rgb(110, 110, 110);
     /** font color **/
     --font-color: black;
     /** h1 color -- practice **/
-    --h1-color: white;
+    --h1-color: rgb(110, 110, 110);
     /** layout variables **/
     --page-top-position: 85%;
     --page-width: 30%;
     --bottom-bar-height: 15vh;
-    --bottom-bar-color: hsla(131, 53%, 85%, 0.8);
+    --bottom-bar-color: rgb(110, 110, 110);
 }
 
 
@@ -56,39 +58,155 @@ div.explanation{
 }
 
 div.requirements{
-    left: 10%;
+    left: 20%;
 }
 
 div.benefits{
-    left: 25%;
+    left: 40%;
 }
 
 div.participation{
-    left: 40%;
+    left: 60%;
 }
 
 aside.sidebar{
     position: absolute;
     top: 20%;
     right: 0;
-    width: 10%;
-    height: 700px
+    width: 20%;
+    height: 100%;
+    padding: 2%;
+    border: 2px solid black;
 }
 
 section.intro{
     position: fixed;
     bottom: 5%;
-    left: 30%;
+    left: 20%;
     width: 30%;
     height: 80%;
     background-image:url(../img/newspaper1.jpg);
+    padding: 2%;
+    border: 2px solid black;
+    margin-left: 100px;
+    text-indent: 1px; /** -9999px removes**/
 }
 
 div.extra2{
     position: fixed;
     bottom: 0;
     left: 0;
-    right: 0;
+    width: 100%;
     height: var(--bottom-bar-height);
     background-color: var(--bottom-bar-color);
 }
+
+div.extra1{
+    position: fixed;
+    bottom: 5%;
+    left: 20%;
+    width: 30%;
+    height: 80%;
+    background-image: url(../img/newspaper2.jpg);
+    z-index: -1;
+}
+
+/* create tabs for the folder */
+
+div.explanation h3, div.requirements h3, div.benefits h3, div.participation h3{
+    margin-top: -5%;
+    width: 15vw;
+    background-color: hsla(131, 53%, 85%, 0.8);
+    border-radius: 40px 40px 40px 40px;
+    border: 2px solid black;
+}
+
+/**03: Typography **/
+@font-face {
+    font-family: 'myfont';
+    src: url(../fonts/chunkfive.eot);
+}
+
+header h1{
+    font-family: 'myfont',sans-serif;
+    font-weight: 100;
+    font-size: 1.25em;
+    letter-spacing: normal;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+header h2{
+    /* use a different web fonts*/
+    font-family: 'Bebas Neue',cursive;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style-type: none;
+}
+
+#design-selection h3{
+    visibility: hidden;
+}
+
+#design-archives{
+    display: none;
+}
+
+#zen-resources{
+    visibility: hidden;
+}
+
+/* 04, selector practice, transform, transition, ... */
+a:hover{
+    font-size: 1.5em;
+}
+
+div.explanation:hover{
+    top:15vh;
+    height: 90vh;
+}
+
+/* finish the active action for requirement/benefits/participation */
+
+div.requirements:hover{
+    top: 1.5em;
+    height: 90vh;
+}
+
+div.benefits:hover{
+    top: 1.5em;
+    height: 90vh;
+}
+
+div.participation:hover{
+    top: 1.5em;
+    height: 90vh;
+}
+
+p::first-letter{
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+p:nth-child(2n){
+    background-color: rgb(110, 110, 110);
+}
+
+p:nth-child(2n+1){
+    background-color: hsla(131, 53%, 85%, 0.8);
+}
+
+li:first-of-type{
+    background-color: hsla(131, 53%, 85%, 0.8);
+}
+
+h3{
+    color: black; text-shadow: white 0.1em 0.1em 0.1em;
+}
+
+/** Border radius **/
