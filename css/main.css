@@ -51,6 +51,8 @@ div.explanation, div.requirements, div.benefits, div.participation{
     width: var(--page-width);
     top: var(--page-top-position);
     background-image: url(../img/newspaper3.jpg);
+    /* transition: all 4s easr-in-out */
+    transition: all 4s ease-in-out;
 }
 
 div.explanation{
@@ -58,24 +60,24 @@ div.explanation{
 }
 
 div.requirements{
-    left: 20%;
+    left: 16%;
 }
 
 div.benefits{
-    left: 40%;
+    left: 32%;
 }
 
 div.participation{
-    left: 60%;
+    left: 48%;
 }
 
 aside.sidebar{
     position: absolute;
     top: 20%;
-    right: 0;
-    width: 20%;
-    height: 100%;
-    padding: 2%;
+    right: 3%;
+    width: 15%;
+    height: 70%;
+    /*padding: 2%;*/
     border: 2px solid black;
 }
 
@@ -90,6 +92,8 @@ section.intro{
     border: 2px solid black;
     margin-left: 100px;
     text-indent: 1px; /** -9999px removes**/
+    /** put the transform and translate here **/
+    transform: rotate(-10deg) translate(-100px, 0);
 }
 
 div.extra2{
@@ -109,6 +113,7 @@ div.extra1{
     height: 80%;
     background-image: url(../img/newspaper2.jpg);
     z-index: -1;
+    transform: rotate(15deg) translate(200px, -100px);
 }
 
 /* create tabs for the folder */
@@ -209,4 +214,43 @@ h3{
     color: black; text-shadow: white 0.1em 0.1em 0.1em;
 }
 
-/** Border radius **/
+/** list style image **/
+ul{
+    list-style-image: url(../img/star.png);
+}
+
+/** transform and transition **/
+section.intro h3:hover ~p{
+    opacity: 1;
+    transition: all 3s ease-in-out;
+}
+
+section.intro h3:hover ~p{
+    transform: scale(0.2);
+    opacity: 0; /* makes transparent*/
+}
+/** animation**/
+@keyframes backandforth{
+    from{transform: translate(-500px, 0);}
+    30%{transform: translate(-300px, 0);}
+    50%{transform: translate(300px, 0);}
+    70%{transform: translate(500px, 0);}
+    90%{transform: translate(600px, 0);}
+}
+
+footer{
+    position: fixed;
+    bottom: 5vh;
+    left: 50%;
+    z-index: 4;
+    animation: 10s ease-in-out 2s alternate infinite backandforth;
+}
+
+/* 05 fun features */
+/*body{
+    clip-path: circle(60% at 50vw 50vh);
+}*/
+
+aside.sidebar{
+    clip-path: polygon(0 0, 0 50%, 50% 90%, 100% 50%, 100% 0);
+}
